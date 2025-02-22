@@ -1,0 +1,15 @@
+{
+  "name": "baby-milk-tracker",
+  "version": "1.0.0",
+  "description": "一个记录婴儿奶粉摄入量的应用，支持数据统计和可视化展示。",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

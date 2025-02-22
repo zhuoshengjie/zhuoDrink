@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卓乐橙喝奶记录</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>卓乐橙喝奶记录</h1>
+        <form id="milk-form">
+            <label for="amount">奶粉数量 (毫升):</label>
+            <input type="number" id="amount" required>
+            <button type="submit">记录</button>
+        </form>
+        <div id="table-container">
+            <h2>记录表格</h2>
+            <!-- 今日奶粉摄入总量 -->
+            <p id="total-milk">今日奶粉摄入总量: <span id="total-milk-amount">0</span> 毫升</p>
+           <p id="milk-count">今日奶粉摄入次数: <span id="milk-count-amount">0</span> 次</p>
+            <table id="milk-table">
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>奶粉数量 (毫升)</th>
+                    </tr>
+                </thead>
+                <tbody id="milk-table-body">
+                    <!-- 数据将动态插入这里 -->
+                </tbody>
+            </table>
+        </div>
+        <div id="chart-container">
+            <h2>奶粉摄入图表</h2>
+            <canvas id="milkChart"></canvas>
+        </div>
+        <div id="alertDiv">
+            记录成功！卓乐橙真能喝奶！
+        </div>
+    </div>
+    <script src="https://cdn.staticfile.net/Chart.js/3.9.1/chart.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
