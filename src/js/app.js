@@ -67,10 +67,26 @@ document.addEventListener('DOMContentLoaded', function() {
         reverse().
         forEach(record => {
             const row = document.createElement('tr');
-            row.innerHTML = `<td>${record.time}</td><td>${record.amount}</td>`;
+            row.innerHTML = `<td>${record.time}</td><td>${record.amount}</td><td><button class="delete-btn">删除</button></td>`;
             tableBody.appendChild(row);
         });
     }
+
+    // 删除按钮 delete-btn
+    tableBody.addEventListener('click', function(event) {
+        if (event.target.classList.contains('delete-btn')) {
+            const records = getRecords();
+            const tr = event.target.parentElement.parentElement;
+            const time = tr.children[0].textContent;
+            const amount = tr.children[1].textContent;
+            const newRecords = records.filter(record => !(record.time === time && record.amount === amount));
+            localStorage.setItem('milkRecords', JSON.stringify(newRecords));
+            updateTable();
+            updateCharts();
+            updataNum();
+        }
+    });
+
 
     function saveToLocalStorage() {
         // 数据已在addMilkRecord中保存
