@@ -7,7 +7,11 @@ function updateChart(labels, data) {
     if (milkChart) {
         milkChart.destroy();
     }
-    
+    // labels去掉年份和秒数 2025/1/1 12:00:00 => 1/1 12:00
+    labels = labels.map((label) => {
+        const date = new Date(label);
+        return `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+    });
     milkChart = new Chart(ctx, {
         type: 'line', // 图表类型
         data: {
