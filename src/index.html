@@ -20,7 +20,7 @@
             <h2>记录表格</h2>
             <!-- 今日奶粉摄入总量 -->
             <p id="total-milk">今日奶粉摄入总量: <span id="total-milk-amount">0</span> 毫升</p>
-           <p id="milk-count">今日奶粉摄入次数: <span id="milk-count-amount">0</span> 次</p>
+            <p id="milk-count">今日奶粉摄入次数: <span id="milk-count-amount">0</span> 次</p>
             <table id="milk-table">
                 <thead>
                     <tr>
@@ -33,13 +33,25 @@
                     <!-- 数据将动态插入这里 -->
                 </tbody>
             </table>
+            <!-- 添加历史记录按钮 -->
+            <button id="history-btn" class="history-btn">查看历史记录</button>
         </div>
         <div id="chart-container">
             <h2>奶粉摄入图表</h2>
             <canvas id="milkChart"></canvas>
         </div>
         <div id="alertDiv">
-            记录成功！卓乐橙真能喝奶！
+            记录成功！卓乐橙真能喝！
+        </div>
+        <!-- 添加模态框 -->
+        <div id="history-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>历史喝奶记录</h2>
+                <div class="history-list">
+                    <!-- 历史记录将通过JS动态插入 -->
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.staticfile.net/Chart.js/3.9.1/chart.js"></script>
